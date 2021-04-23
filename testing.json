@@ -27,7 +27,7 @@
         {
           "apiVersion": "2019-07-01",
           "type": "Microsoft.Compute/virtualMachines",
-          "name": "[concat('vm', copyIndex('vvm'))]",
+          "name": "[concat('vvm', copyIndex('vvm'))]",
           "location": "eastus",
           "copy": {
             "name": "vvm",
@@ -59,7 +59,7 @@
         {
           "apiVersion": "2019-07-01",
           "type": "Microsoft.Compute/virtualMachines",
-          "name": "vm0",
+          "name": "vvm0",
           "location": "eastus",
           "properties": {
             "storageProfile": {
@@ -82,3 +82,4 @@
         }
     ]
 }
+
