@@ -21,10 +21,10 @@
             "storageProfile": {
               "copy": [
                 {
+                  "condition": "[equals(copyIndex('vvm'), 1)]",
                   "name": "dataDisks",
                   "count": 4,
                   "input": {
-                    "condition": "[less(copyIndex('vvm'), 1)]",
                     "lun": "[copyIndex('dataDisks')]",
                     "createOption": "attach",
                     "managedDisk": {
