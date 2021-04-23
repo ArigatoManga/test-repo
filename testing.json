@@ -5,6 +5,26 @@
     "variables": {},
     "resources": [
         {
+          "type": "Microsoft.Compute/disks",
+          "copy": {
+            "name": "diskCreation",
+            "count": 4
+          },
+          "name": "[concat('disk', copyIndex('diskCreation'))]",
+          "location": "eastus",
+          "apiVersion": "2019-07-01",
+          "sku": {
+            "name": "Premium_LRS"
+          },
+          "properties": {
+            "creationData": {
+              "createOption": "Empty"
+            },
+            "diskSizeGB": 1024,
+            "maxShares": 5
+          }
+        },
+        {
           "apiVersion": "2019-07-01",
           "type": "Microsoft.Compute/virtualMachines",
           "name": "[concat('vvm', copyIndex('vvm'))]",
