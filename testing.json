@@ -8,7 +8,7 @@
           "apiVersion": "2019-07-01",
           "type": "Microsoft.Compute/virtualMachines",
           "name": "vm",
-          "location": "us east",
+          "location": "eastus",
           "copy": {
             "name": "vvm",
             "count": 1
@@ -28,7 +28,7 @@
                     "lun": "[copyIndex('dataDisks')]",
                     "createOption": "attach",
                     "managedDisk": {
-                      "id": "[resourceId('Microsoft.Compute/disks', concat('datadisk', copyIndex('dataDisks')))]"
+                      "id": "[resourceId('Microsoft.Compute/disks', concat('disk', copyIndex('dataDisks')))]"
                     }
                   }
                 }
