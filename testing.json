@@ -39,6 +39,30 @@
           },
           "properties": {
             "storageProfile": {
+              // "copy": [
+              //   {
+              //     "condition": "[equals(copyIndex('vvm'), 1)]",
+              //     "name": "dataDisks",
+              //     "count": 4,
+              //     "input": {
+              //       "lun": "[copyIndex('dataDisks')]",
+              //       "createOption": "attach",
+              //       "managedDisk": {
+              //         "id": "[resourceId('Microsoft.Compute/disks', concat('disk', copyIndex('dataDisks')))]"
+              //       }
+              //     }
+              //   }
+              // ]
+            }
+          }
+        },
+        {
+          "apiVersion": "2019-07-01",
+          "type": "Microsoft.Compute/virtualMachines",
+          "name": "vm0",
+          "location": "eastus",
+          "properties": {
+            "storageProfile": {
               "copy": [
                 {
                   "condition": "[equals(copyIndex('vvm'), 1)]",
