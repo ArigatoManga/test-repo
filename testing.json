@@ -27,7 +27,7 @@
         {
           "apiVersion": "2019-07-01",
           "type": "Microsoft.Compute/virtualMachines",
-          "name": "[concat('vvm', copyIndex('vvm'))]",
+          "name": "[concat('vm', copyIndex('vvm'))]",
           "location": "eastus",
           "copy": {
             "name": "vvm",
